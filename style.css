@@ -1,0 +1,203 @@
+/* Global styles for the body */
+body {
+    background-color: #121212; /* A dark background to make the glass effect pop */
+    color: #f0f0f0;
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+/* The reusable glass effect class */
+.glass-effect {
+    background-color: rgba(30, 30, 30, 0.4);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+/* -------------------- NAVIGATION BAR (Fixed Glass Header) -------------------- */
+
+.navbar {
+    /* Glass effect properties */
+    background-color: rgba(30, 30, 30, 0.4);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+
+    /* Position and shape properties (Centered, fixed, rounded) */
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%; /* Controls the width of the header container */
+    max-width: 1000px; /* Limits max width on large screens */
+    padding: 15px 20px;
+    z-index: 1000;
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    text-align: center;
+}
+
+/* Styling for the navigation links */
+.navbar a {
+    color: #f0f0f0;
+    text-decoration: none;
+    padding: 10px 20px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+/* Hover and Active link styles (Gold color) */
+.navbar a:hover {
+    color: #ffd700;
+}
+
+.navbar a.active {
+    color: #ffd700;
+}
+
+/* -------------------- MAIN LAYOUT (Two Columns) -------------------- */
+
+/* Flexbox container for the two columns - This now wraps the whole page content */
+.main-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px; /* Space between the two containers */
+    padding: 50px;
+    margin-top: 150px; /* Increased margin to ensure content starts safely below the fixed header */
+    min-height: calc(100vh - 150px);
+}
+
+/* Left sidebar container */
+.sidebar-container {
+    width: 350px; /* Increased fixed width for the sidebar */
+    padding: 30px;
+    text-align: center;
+}
+
+/* Right content container */
+.content-container {
+    flex-grow: 1; /* Takes up remaining horizontal space */
+    max-width: 900px;
+    padding: 40px;
+}
+
+/* -------------------- PROFILE & TEXT STYLING -------------------- */
+
+.profile-photo {
+    /* Ensures the photo is centered in the sidebar */
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+.profile-photo img {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border: 5px solid #ffd700; /* Gold border for profile pic */
+}
+
+.profile-name {
+    font-size: 2rem;
+    margin-top: 15px;
+    margin-bottom: 0.5rem;
+}
+
+.profile-title {
+    font-size: 1rem;
+    color: #ffd700;
+    padding: 5px 15px;
+    border: 1px solid #ffd700;
+    border-radius: 20px;
+    display: inline-block;
+    margin-top: 5px;
+}
+
+.contact-info {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: left;
+    font-size: 0.9rem;
+}
+
+.contact-info strong {
+    color: #888; /* Dim the label slightly */
+    display: block;
+    margin-top: 15px;
+}
+
+.detail-line {
+    margin: 5px 0;
+}
+
+.detail-line i {
+    color: #ffd700; /* Gold icon color */
+    margin-right: 10px;
+}
+
+/* -------------------- Toggled Content Styles -------------------- */
+
+/* Hide all content sections by default */
+.page-content.hidden {
+    display: none;
+}
+
+/* Display the current active section */
+.page-content.current {
+    display: block;
+}
+
+/* Base style for headings within the content container */
+.page-content h2 {
+    color: #ffd700;
+    padding-bottom: 10px;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+    margin-bottom: 30px;
+}
+
+/* Specific styling for the Welcome Heading */
+.welcome-heading {
+    text-align: center; /* Center the heading text */
+    font-size: 2.5rem; /* Make it large and impactful */
+    color: #ffd700; /* Use gold for prominence */
+    margin-bottom: 40px;
+    border-bottom: none; /* Remove the standard line below the heading */
+}
+
+.welcome-paragraph {
+    /* New: Center the paragraph text */
+    text-align: center; 
+    
+    margin-bottom: 20px;
+}
+
+
+/* Removed the conflicting .two-columns-text styles for the #home section */
+
+
+/* -------------------- RESPONSIVENESS (Mobile View) -------------------- */
+
+@media (max-width: 1000px) {
+    .main-container {
+        flex-direction: column; /* Stacks the columns vertically on small screens */
+        padding: 20px;
+        gap: 20px;
+    }
+    
+    .sidebar-container {
+        width: 100%; /* Takes full width */
+        order: -1; /* Puts the sidebar at the top of the stack */
+    }
+
+    .content-container {
+        max-width: 100%; /* Takes full width */
+    }
+}

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Talha | Developer Portfolio</title>
+    <!-- Use Google Fonts for the 'Inter' font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <!-- Using a simple Font Awesome kit for icons in the sidebar -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <!-- Top Navigation Bar (Fixed and Centered Glass Effect) -->
+    <header>
+        <nav class="navbar">
+            <!-- Added onClick events to toggle content in the right panel -->
+            <a href="#home" class="nav-link active" onclick="showSection('home', this)">Home</a>
+            <a href="#about" class="nav-link" onclick="showSection('about', this)">About</a>
+            <a href="#portfolio" class="nav-link" onclick="showSection('portfolio', this)">Portfolio</a>
+            <a href="#resume" class="nav-link" onclick="showSection('resume', this)">Resume</a>
+            <a href="#blog" class="nav-link" onclick="showSection('blog', this)">Blog</a>
+            <a href="#contact" class="nav-link" onclick="showSection('contact', this)">Contact</a>
+        </nav>
+    </header>
+
+    <!-- MAIN CONTENT CONTAINER (Two-Column Layout) -->
+    <main class="main-container">
+
+        <!-- LEFT SIDEBAR: Personal Details (Fixed Column) -->
+        <aside class="sidebar-container glass-effect">
+            <div class="profile-photo">
+                <!-- Using placeholder for simplicity. Path check: "/images/Talha.jpg" -->
+                <img src="/images/Talha.jpg" alt="Talha Profile" onerror="this.onerror=null; this.src='https://placehold.co/150x150/505050/ffffff?text=Talha'">
+            </div>
+            <h2 class="profile-name">Talha J.</h2>
+            <p class="profile-title">Frontend Developer</p>
+
+            <div class="contact-info">
+                <p><strong>EMAIL</strong></p>
+                <p class="detail-line"><i class="fas fa-envelope"></i> talha.dev@example.com</p>
+                
+                <p><strong>PHONE</strong></p>
+                <p class="detail-line"><i class="fas fa-phone"></i> +92 333 1234567</p>
+            </div>
+        </aside>
+
+        <!-- RIGHT CONTENT AREA: Toggled Sections -->
+        <section class="content-container glass-effect">
+            
+            <!-- HOME SECTION (Initial View) - UPDATED STRUCTURE -->
+            <div id="home" class="page-content current">
+                <h2 class="welcome-heading">Welcome to my space!</h2>
+                
+                <p class="welcome-paragraph">I am a passionate Frontend Developer focused on creating beautiful, intuitive, and highly functional web experiences. Currently, I'm diving deep into React and Next.js to build modern, performant applications.</p>
+                
+                <p class="welcome-paragraph">My core mission is simple: transform complex ideas into simple, elegant digital solutions that delight users. Let's build something amazing together.</p>
+                
+            </div>
+
+            <!-- ABOUT SECTION -->
+            <div id="about" class="page-content hidden">
+                <h2>Detailed About Me</h2>
+                <p>I started my journey in development because I love solving puzzles. The moment I wrote my first line of working code, I was hooked. Over the years, I have specialized in front-end technologies, focusing on responsive design, performance optimization, and accessible user interfaces.</p>
+                <p>When I'm not coding, you can find me exploring new UI/UX trends or contributing to open-source projects.</p>
+            </div>
+
+            <!-- PORTFOLIO SECTION -->
+            <div id="portfolio" class="page-content hidden">
+                <h2>My Work Portfolio</h2>
+                <p>Here you will find a curated collection of my best projects. Each project highlights my ability to turn design concepts into pixel-perfect, fully functional web applications.</p>
+                <!-- Project cards will go here -->
+            </div>
+
+            <!-- RESUME SECTION -->
+            <div id="resume" class="page-content hidden">
+                <h2>Professional Resume</h2>
+                <!-- NOTE: Replace 'your-resume.pdf' with your actual file path. -->
+                <iframe src="your-resume.pdf" title="Talha Resume" width="100%" height="600px"></iframe>
+            </div>
+
+            <!-- BLOG SECTION -->
+            <div id="blog" class="page-content hidden">
+                <h2>Developer Blog</h2>
+                <p>A place where I share my thoughts on new technologies, coding tips, and development insights.</p>
+                <!-- Blog post list will go here -->
+            </div>
+
+            <!-- CONTACT SECTION -->
+            <div id="contact" class="page-content hidden">
+                <h2>Get In Touch</h2>
+                <p>Ready to start a project? Send me a message!</p>
+                <!-- A basic contact form goes here -->
+            </div>
+
+        </section>
+
+    </main>
+    
+    <script>
+        // Simple JavaScript function to handle section toggling
+        function showSection(sectionId, clickedElement) {
+            // Hide all content sections
+            document.querySelectorAll('.page-content').forEach(section => {
+                section.classList.remove('current');
+                section.classList.add('hidden');
+            });
+
+            // Show the selected section
+            const targetSection = document.getElementById(sectionId);
+            if (targetSection) {
+                targetSection.classList.remove('hidden');
+                targetSection.classList.add('current');
+            }
+
+            // Remove 'active' class from all navigation links
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.classList.remove('active');
+            });
+
+            // Add 'active' class to the clicked link
+            clickedElement.classList.add('active');
+        }
+    </script>
+</body>
+</html>
