@@ -1,203 +1,438 @@
-/* Global styles for the body */
+/* =================== GLASMORPHIC HOME STYLES =================== */
+.glass-home {
+    display: flex;
+    align-items: center;
+    gap: 56px;
+    background: rgba(30, 30, 38, 0.65);
+    border-radius: 36px;
+    border: 1.5px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 7px 38px 0 rgba(109, 68, 255, 0.12), 0 1.5px 14px 0 rgba(72, 61, 139, 0.23);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    padding: 48px 54px;
+    max-width: 900px;
+    margin: 70px auto 0 auto;
+    min-height: 320px;
+    z-index: 1;
+}
+
+/* =================== SECTION CARDS =================== */
+.glass-section {
+    background: rgba(30, 30, 38, 0.65);
+    border-radius: 28px;
+    border: 1.2px solid rgba(255, 255, 255, 0.16);
+    box-shadow: 0 7px 38px 0 rgba(109, 68, 255, 0.08);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    padding: 40px 36px;
+    margin: 50px auto;
+    max-width: 1160px;
+    /* << WIDER for 4 cards inline on large screens */
+    min-width: 320px;
+}
+
+/* =================== PROFILE PHOTO, HEADINGS, META =================== */
+.home-photo img {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 7px solid #a484f5;
+    background: #27283a;
+    box-shadow: 0 0 0 8px rgba(130, 105, 255, 0.12);
+}
+
+.home-desc h1,
+.gradient-name {
+    font-size: 2.7rem;
+    font-weight: 700;
+    margin-bottom: 18px;
+}
+
+.gradient-name {
+    background: linear-gradient(90deg, #7f8cff 35%, #e088ff 90%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.home-desc p {
+    font-size: 1.18rem;
+    color: #eee;
+    line-height: 1.5;
+}
+
+.home-meta {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    margin-top: 16px;
+    margin-bottom: 6px;
+    font-size: 1.09rem;
+    color: #c3c3c3;
+    font-weight: 500;
+}
+
+.home-meta .meta-icon {
+    color: #7a7a7a9c;
+    font-size: 1.23rem;
+    margin-right: 3px;
+    display: inline-flex;
+    align-items: center;
+}
+
+.home-meta .meta-location {
+    color: #f0f0f0;
+}
+
+.home-meta .meta-dot {
+    color: #525251;
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin: 0 2px;
+    position: relative;
+    top: -1px;
+}
+
+.home-meta .meta-institute {
+    color: #b5b5ff;
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: 0.09px;
+}
+
+/* =================== TIMELINE (RESUME/EDUCATION SECTION) =================== */
+
+.resume-timeline {
+    padding: 32px 24px;
+    background: rgba(30, 30, 38, 0.65);
+    border-radius: 20px;
+    border: 1.2px solid rgba(255, 255, 255, 0.16);
+    max-width: 780px;
+    margin: 32px auto;
+}
+
+.timeline-heading {
+    padding-left: 32px;
+    /* Match .timeline-bullets left padding */
+}
+
+/* BULLET POINTS FOR EDUCATION LIST */
+.timeline-bullets {
+    list-style-type: disc;
+    padding-left: 32px;
+    margin: 0;
+}
+
+.timeline-bullets li {
+    margin-bottom: 28px;
+    color: #fff;
+}
+
+.timeline-bullets li::marker {
+    color: #FFD47C;
+    font-size: 1.35em;
+}
+
+.resume-timeline h3 {
+    margin: 0 0 8px 0;
+    font-size: 1.18rem;
+    font-weight: bold;
+    color: #fff;
+}
+
+.timeline-range {
+    color: #FFD47C;
+    font-size: 1.07rem;
+    font-weight: 600;
+    display: block;
+    margin-bottom: 6px;
+}
+
+.resume-timeline p {
+    margin: 0;
+    color: #e0e0e0;
+    font-size: 1.04rem;
+    line-height: 1.45;
+}
+
+
+/* Horizontal line separator between entries */
+.timeline-separator {
+    border: none;
+    border-top: 2px solid #fff;
+    margin: 28px 0 20px 0;
+    opacity: 0.17;
+}
+
+/* SKILL*/
+.skills-section {
+    margin-top: 30px;
+    padding: 34px 32px;
+}
+
+.skills-section h2 {
+    font-size: 2rem;
+    color: #fff;
+    margin-bottom: 24px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.skill-bar-row {
+    margin-bottom: 28px;
+    font-size: 1.22rem;
+    font-weight: 700;
+    color: #fff;
+}
+
+.skill-bar-row strong {
+    font-weight: 700;
+    color: #fff;
+    margin-right: 12px;
+}
+
+.skill-bar-percent,
+.skill-percent {
+    font-weight: 500;
+    font-size: 1.1rem;
+    color: #ccc;
+}
+
+.skill-bar-bg {
+    margin-top: 10px;
+    width: 100%;
+    height: 12px;
+    background: #323232;
+    border-radius: 8px;
+    position: relative;
+    overflow: hidden;
+}
+
+.skill-bar {
+    height: 100%;
+    border-radius: 8px;
+    background: linear-gradient(90deg, #7f8cff 35%, #e088ff 90%);
+    transition: width 0.9s cubic-bezier(.63, -0.01, .24, 1.13);
+}
+
+
+/* =================== PORTFOLIO =================== */
+.portfolio-section {
+    padding: 0;
+    margin: 0;
+    max-width: 100%;
+}
+
+.portfolio-section h2 {
+    font-size: 2.1rem;
+    color: #fff;
+    margin-bottom: 34px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.portfolio-cards {
+    display: flex;
+    gap: 38px;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.portfolio-card {
+    background: rgba(20, 20, 20, 0.94);
+    border-radius: 24px;
+    border: 1.2px solid rgba(255, 255, 255, 0.10);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.13);
+    padding: 36px 32px 28px 32px;
+    min-width: 320px;
+    max-width: 410px;
+    flex: 1 1 340px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.portfolio-card h3 {
+    color: #fff;
+    font-size: 1.29rem;
+    font-weight: 700;
+    margin: 0 0 9px 0;
+}
+
+.portfolio-card p {
+    color: #bdbdbd;
+    font-size: 1.07rem;
+    font-style: italic;
+    margin: 0 0 15px 0;
+}
+
+.portfolio-time {
+    color: #bdbdbd;
+    font-size: 1.01rem;
+    margin-top: auto;
+}
+
+@media (max-width: 900px) {
+    .portfolio-cards {
+        flex-direction: column;
+        gap: 22px;
+    }
+
+    .portfolio-card {
+        min-width: 0;
+        max-width: 100%;
+    }
+}
+
+/* =================== TOGGLED SECTION VISIBILITY =================== */
+.page-content.hidden {
+    display: none;
+}
+
+.page-content.current {
+    display: block;
+}
+
+/* =================== GLASS NAVBAR AT THE VERY TOP =================== */
+.glass-navbar {
+    position: fixed;
+    top: 28px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    padding: 0 32px;
+    height: 70px;
+    background: rgba(20, 20, 20, 0.89);
+    border-radius: 24px;
+    border: 1.5px solid rgba(255, 255, 255, 0.12);
+    box-shadow: 0 7px 38px 0 rgba(109, 68, 255, 0.12), 0 1.5px 14px 0 rgba(72, 61, 139, 0.23);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    z-index: 9999;
+    overflow: visible;
+}
+
+.glass-navbar::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 100%;
+    height: 18px;
+    pointer-events: none;
+    z-index: -1;
+    background: linear-gradient(90deg,
+            rgba(130, 105, 255, 0.25) 0%,
+            rgba(72, 61, 139, 0.27) 60%,
+            rgba(30, 30, 30, 0.18) 100%);
+    border-radius: 0 0 18px 18px;
+    filter: blur(9px);
+    opacity: 0.85;
+}
+
+.glass-navbar .nav-link {
+    color: #eaeaea;
+    text-decoration: none;
+    font-family: 'Inter', sans-serif;
+    font-size: 1.28rem;
+    font-weight: 500;
+    padding: 10px 28px;
+    border-radius: 15px;
+    transition: background 0.21s, color 0.15s;
+    background: transparent;
+    margin: 0 2px;
+}
+
+.glass-navbar .nav-link.active,
+.glass-navbar .nav-link:hover {
+    background: rgba(114, 112, 112, 0.19);
+    color: #fff;
+    font-weight: 600;
+    box-shadow: 0 2px 8px rgba(109, 68, 255, 0.08);
+    cursor: pointer;
+}
+
+/* Body padding for navbar space */
 body {
-    background-color: #121212; /* A dark background to make the glass effect pop */
+    background-color: #121212;
     color: #f0f0f0;
     font-family: 'Inter', sans-serif;
     margin: 0;
     padding: 0;
     line-height: 1.6;
+    overflow-x: hidden;
+    background-image: url('bg.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    background-color: rgba(0, 0, 0, 0.7);
+    background-blend-mode: overlay;
+    padding-top: 100px !important;
 }
 
-/* The reusable glass effect class */
-.glass-effect {
-    background-color: rgba(30, 30, 30, 0.4);
-    backdrop-filter: blur(15px);
-    -webkit-backdrop-filter: blur(15px);
-    border-radius: 15px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
-    overflow: hidden;
-}
+/* Responsive Adjustments */
+@media (max-width: 900px) {
 
-/* -------------------- NAVIGATION BAR (Fixed Glass Header) -------------------- */
-
-.navbar {
-    /* Glass effect properties */
-    background-color: rgba(30, 30, 30, 0.4);
-    backdrop-filter: blur(15px);
-    -webkit-backdrop-filter: blur(15px);
-
-    /* Position and shape properties (Centered, fixed, rounded) */
-    position: fixed;
-    top: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 90%; /* Controls the width of the header container */
-    max-width: 1000px; /* Limits max width on large screens */
-    padding: 15px 20px;
-    z-index: 1000;
-    border-radius: 15px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
-    overflow: hidden;
-    text-align: center;
-}
-
-/* Styling for the navigation links */
-.navbar a {
-    color: #f0f0f0;
-    text-decoration: none;
-    padding: 10px 20px;
-    font-size: 1.1rem;
-    font-weight: bold;
-    transition: color 0.3s ease;
-}
-
-/* Hover and Active link styles (Gold color) */
-.navbar a:hover {
-    color: #ffd700;
-}
-
-.navbar a.active {
-    color: #ffd700;
-}
-
-/* -------------------- MAIN LAYOUT (Two Columns) -------------------- */
-
-/* Flexbox container for the two columns - This now wraps the whole page content */
-.main-container {
-    display: flex;
-    justify-content: center;
-    gap: 30px; /* Space between the two containers */
-    padding: 50px;
-    margin-top: 150px; /* Increased margin to ensure content starts safely below the fixed header */
-    min-height: calc(100vh - 150px);
-}
-
-/* Left sidebar container */
-.sidebar-container {
-    width: 350px; /* Increased fixed width for the sidebar */
-    padding: 30px;
-    text-align: center;
-}
-
-/* Right content container */
-.content-container {
-    flex-grow: 1; /* Takes up remaining horizontal space */
-    max-width: 900px;
-    padding: 40px;
-}
-
-/* -------------------- PROFILE & TEXT STYLING -------------------- */
-
-.profile-photo {
-    /* Ensures the photo is centered in the sidebar */
-    display: inline-block;
-    margin-bottom: 20px;
-}
-
-.profile-photo img {
-    border-radius: 50%;
-    width: 150px;
-    height: 150px;
-    object-fit: cover;
-    border: 5px solid #ffd700; /* Gold border for profile pic */
-}
-
-.profile-name {
-    font-size: 2rem;
-    margin-top: 15px;
-    margin-bottom: 0.5rem;
-}
-
-.profile-title {
-    font-size: 1rem;
-    color: #ffd700;
-    padding: 5px 15px;
-    border: 1px solid #ffd700;
-    border-radius: 20px;
-    display: inline-block;
-    margin-top: 5px;
-}
-
-.contact-info {
-    margin-top: 30px;
-    padding-top: 20px;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    text-align: left;
-    font-size: 0.9rem;
-}
-
-.contact-info strong {
-    color: #888; /* Dim the label slightly */
-    display: block;
-    margin-top: 15px;
-}
-
-.detail-line {
-    margin: 5px 0;
-}
-
-.detail-line i {
-    color: #ffd700; /* Gold icon color */
-    margin-right: 10px;
-}
-
-/* -------------------- Toggled Content Styles -------------------- */
-
-/* Hide all content sections by default */
-.page-content.hidden {
-    display: none;
-}
-
-/* Display the current active section */
-.page-content.current {
-    display: block;
-}
-
-/* Base style for headings within the content container */
-.page-content h2 {
-    color: #ffd700;
-    padding-bottom: 10px;
-    border-bottom: 2px solid rgba(255, 255, 255, 0.1);
-    margin-bottom: 30px;
-}
-
-/* Specific styling for the Welcome Heading */
-.welcome-heading {
-    text-align: center; /* Center the heading text */
-    font-size: 2.5rem; /* Make it large and impactful */
-    color: #ffd700; /* Use gold for prominence */
-    margin-bottom: 40px;
-    border-bottom: none; /* Remove the standard line below the heading */
-}
-
-.welcome-paragraph {
-    /* New: Center the paragraph text */
-    text-align: center; 
-    
-    margin-bottom: 20px;
-}
-
-
-/* Removed the conflicting .two-columns-text styles for the #home section */
-
-
-/* -------------------- RESPONSIVENESS (Mobile View) -------------------- */
-
-@media (max-width: 1000px) {
-    .main-container {
-        flex-direction: column; /* Stacks the columns vertically on small screens */
-        padding: 20px;
-        gap: 20px;
-    }
-    
-    .sidebar-container {
-        width: 100%; /* Takes full width */
-        order: -1; /* Puts the sidebar at the top of the stack */
+    .glass-home,
+    .split-home {
+        flex-direction: column;
+        gap: 18px;
+        padding: 28px 12px;
+        max-width: 98vw;
+        margin-top: 30px;
+        min-height: 120px;
     }
 
-    .content-container {
-        max-width: 100%; /* Takes full width */
+    .split-left,
+    .split-right {
+        min-width: 0;
+        width: 100%;
     }
+
+    .resume-timeline {
+        padding-left: 0;
+    }
+
+    .timeline-list {
+        padding-left: 15px;
+    }
+
+    .timeline-dot {
+        left: -12px;
+    }
+
+    .home-photo img {
+        width: 120px;
+        height: 120px;
+    }
+
+    .home-desc h1 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 700px) {
+    .glass-navbar {
+        padding: 0 4vw;
+        height: 54px;
+        border-radius: 16px;
+    }
+
+    .glass-navbar .nav-link {
+        font-size: 1.03rem;
+        padding: 7px 13px;
+        border-radius: 11px;
+    }
+
+    body {
+        padding-top: 67px !important;
+    }
+}
+
+html {
+    scroll-behavior: smooth;
 }
