@@ -5,22 +5,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Talha | Developer Portfolio</title>
-    <!-- Use Google Fonts for the 'Inter' font -->
+    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <!-- Font Awesome 6 free CDN - for icons! -->
+    <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
 
 <body style="
-    background-image: url('images/bg1.jpg');
-    background-size: cover;
-    background-attachment: fixed;
-    background-position: center;
-    background-color: rgba(0, 0, 0, 0.7);
-    background-blend-mode: overlay;
-    ">
-    <!-- Top Navigation Bar -->
+  background-image: url('/images/bg1.jpg');
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  background-color: rgba(0, 0, 0, 0.7);
+  background-blend-mode: overlay;
+">
+    <!-- Navigation Bar -->
     <header>
         <nav class="glass-navbar">
             <a href="#Home" class="nav-link active" onclick="showSection('Home', this, event)">Home</a>
@@ -30,13 +30,12 @@
         </nav>
     </header>
 
-    <!-- ================= ALL SECTIONS ================= -->
     <div id="all-sections">
-        <!-- Home Profile -->
+        <!-- Home -->
         <div id="Home" class="page-content current">
             <section class="glass-home">
                 <div class="home-photo">
-                    <img src="images/Talha.jpg" alt="Talha Profile"
+                    <img src="/images/Talha.jpg" alt="Talha Profile"
                         onerror="this.onerror=null; this.src='https://placehold.co/180x180/505050/ffffff?text=Talha'">
                 </div>
                 <div class="home-desc">
@@ -111,74 +110,95 @@
                     </div>
                 </div>
             </section>
-
-            <!-- Portfolio -->
-            <!-- Portfolio Section (same container as Education) -->
-            <div id="Portfolio" class="page-content current">
-                <section class="glass-section">
-                    <h2>Portfolio</h2>
-                    <div class="portfolio-cards">
-                        <div class="portfolio-card">
-                            <h3>Catch Me If You Can (Web Game)</h3>
-                            <p><i>Fun challenge built with JavaScript and CSS</i></p>
-                            <span class="portfolio-time">Aug 2025 – Present</span>
-                        </div>
-                        <div class="portfolio-card">
-                            <h3>Jersey Sales Dashboard</h3>
-                            <p><i>Data-driven dashboard app for tracking my online business</i></p>
-                            <span class="portfolio-time">May 2025 – Present</span>
-                        </div>
-                        <!-- Add more cards here -->
-                    </div>
-                </section>
-            </div>
-
-
-
-
-            <!-- Contact -->
-            <div id="contact" class="page-content current">
-                <section class="glass-section">
-                    <h2>Get In Touch</h2>
-                    <p>Ready to start a project? Send me a message!</p>
-                </section>
-            </div>
         </div>
 
-        <script>
-            // Custom toggle logic for your intent:
-            function showSection(sectionId, clickedElement, event) {
-                if (event) event.preventDefault();
+        <!-- Portfolio -->
+        <div id="Portfolio" class="page-content hidden">
+            <section class="glass-section">
+                <h2>Portfolio</h2>
+                <div class="portfolio-cards">
+                    <div class="portfolio-card">
+                        <h3>Catch Me If You Can (Web Game)</h3>
+                        <p><i>Fun challenge built with JavaScript and CSS</i></p>
+                        <span class="portfolio-time">Aug 2025 – Present</span>
+                    </div>
+                    <div class="portfolio-card">
+                        <h3>Jersey Sales Dashboard</h3>
+                        <p><i>Data-driven dashboard app for tracking my online business</i></p>
+                        <span class="portfolio-time">May 2025 – Present</span>
+                    </div>
+                </div>
+            </section>
+        </div>
 
-                // Remove 'active' from all nav links, add to clicked
-                document.querySelectorAll('.nav-link').forEach(link => {
-                    link.classList.remove('active');
-                });
-                clickedElement.classList.add('active');
+        <!-- Contact -->
+        <div id="contact" class="page-content hidden">
+            <div class="contact-container">
+                <h2><span style="color:#7ea6fd;">Let's work together</span></h2>
+                <p>Have a project in mind? I'd love to hear about it. Send me a message and I'll get back to you soon.
+                </p>
+                <form class="contact-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="fullName">Full Name</label>
+                            <input type="text" id="fullName" placeholder="Your name">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" placeholder="your.email@example.com">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" rows="5" placeholder="Tell me about your project..."></textarea>
+                    </div>
+                    <button type="submit">Send</button>
+                </form>
+            </div>
+        </div>
+    </div>
 
-                // If Home is clicked, show all sections
-                if (sectionId === 'Home') {
-                    document.querySelectorAll('.page-content').forEach(section => {
-                        section.classList.remove('hidden');
-                        section.classList.add('current');
-                    });
+
+    <!-- Footer (outside all-sections) -->
+    <footer class="site-footer">
+        <div class="footer-left">
+            © 2025 Talha Razzak. All rights reserved.
+        </div>
+        <div class="footer-right">
+            <a href="https://www.linkedin.com/in/yourprofile" target="_blank" aria-label="LinkedIn">
+                <!-- LinkedIn SVG -->
+            </a>
+            <a href="https://github.com/t41haa" target="_blank" aria-label="GitHub">
+                <!-- GitHub SVG -->
+            </a>
+        </div>
+        <button class="footer-up" onclick="window.scrollTo({ top: 0, behavior: 'smooth' });" aria-label="Scroll to top">
+            <!-- Up arrow SVG -->
+        </button>
+    </footer>
+
+    <script>
+        // Navigation logic remains unchanged
+        function showSection(sectionId, clickedElement, event) {
+            if (event) event.preventDefault();
+
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.classList.remove('active');
+            });
+            clickedElement.classList.add('active');
+
+            // Show only selected section
+            document.querySelectorAll('.page-content').forEach(section => {
+                if (section.id === sectionId) {
+                    section.classList.remove('hidden');
+                    section.classList.add('current');
                 } else {
-                    // Hide all sections except the selected one
-                    document.querySelectorAll('.page-content').forEach(section => {
-                        if (section.id === sectionId) {
-                            section.classList.remove('hidden');
-                            section.classList.add('current');
-                        } else {
-                            section.classList.add('hidden');
-                            section.classList.remove('current');
-                        }
-                    });
+                    section.classList.add('hidden');
+                    section.classList.remove('current');
                 }
-            }
-        </script>
+            });
+        }
+    </script>
 </body>
 
 </html>
-
-
-
