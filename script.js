@@ -3,8 +3,21 @@
 // Navigation tab logic
 function showSection(sectionId, clickedElement, event) {
   if (event) event.preventDefault();
-  document.querySelectorAll('.nav-link').forEach(link => link.classList.remove('active'));
+
+  document.querySelectorAll('.nav-link').forEach(link => {
+    link.classList.remove('active');
+  });
   clickedElement.classList.add('active');
+
+  if (sectionId === 'Home') {
+    document.querySelectorAll('.page-content').forEach(section => {
+      section.classList.remove('hidden');
+      section.classList.add('current');
+    });
+  }
+
+} else {
+  // Show only selected section
   document.querySelectorAll('.page-content').forEach(section => {
     if (section.id === sectionId) {
       section.classList.remove('hidden');
