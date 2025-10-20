@@ -274,6 +274,75 @@
     margin-top: auto;
 }
 
+.contact-container {
+  background: #181828;
+  border-radius: 15px;
+  padding: 32px;
+  color: #fff;
+  max-width: 900px;
+  margin: 40px auto;
+}
+
+.contact-container h2 {
+  font-size: 2.2rem;
+  font-weight: bold;
+}
+
+.contact-container p {
+  margin-bottom: 24px;
+  color: #ccc;
+}
+
+.contact-form .form-row {
+  display: flex;
+  gap: 24px;
+}
+
+.form-group {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 16px;
+}
+
+.form-group label {
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.form-group input,
+.form-group textarea {
+  border: none;
+  border-radius: 8px;
+  padding: 12px;
+  background: #232342;
+  color: #fff;
+  font-size: 1rem;
+  margin-bottom: 8px;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: #888;
+}
+
+button[type="submit"] {
+  background: #7ea6fd;
+  color: #181828;
+  padding: 12px 36px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+button[type="submit"]:hover {
+  background: #5780d8;
+}
+
+
 @media (max-width: 900px) {
     .portfolio-cards {
         flex-direction: column;
@@ -373,6 +442,68 @@ body {
     background-blend-mode: overlay;
     padding-top: 100px !important;
 }
+.site-footer {
+  background: #0f0f0f;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 32px 48px 20px 32px;
+  color: #fff;
+  position: relative;
+}
+
+.footer-left {
+  font-size: 1.1rem;
+  color: #ccc;
+}
+
+.footer-right a {
+  margin-left: 24px;
+  transition: opacity 0.2s;
+  text-decoration: none;
+}
+
+.footer-right a:hover {
+  opacity: 0.7;
+}
+
+.footer-right svg {
+  vertical-align: middle;
+}
+
+.footer-up {
+  position: absolute;
+  right: 38px;
+  bottom: 28px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  padding: 0;
+  border-radius: 50%;
+  /* Optionally: box-shadow, hover effect */
+}
+
+.footer-up svg {
+  display: block;
+}
+
+@media (max-width:600px) {
+  .site-footer {
+    flex-direction: column;
+    text-align: center;
+    gap: 16px;
+    padding: 24px 12px 16px 12px;
+  }
+  .footer-right {
+    margin-top: 10px;
+  }
+  .footer-up {
+    right: 18px;
+    bottom: 20px;
+  }
+}
+
 
 /* Responsive Adjustments */
 @media (max-width: 900px) {
