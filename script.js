@@ -1,5 +1,12 @@
 "use strict";
 
+document.addEventListener("DOMContentLoaded", () => {
+  const homeLink = document.querySelector('.nav-link.home');
+  if (homeLink) {
+    showSection('Home', homeLink, null);
+  }
+});
+
 // Navigation tab logic
 function showSection(sectionId, clickedElement, event) {
   if (event) event.preventDefault();
@@ -14,25 +21,23 @@ function showSection(sectionId, clickedElement, event) {
       section.classList.remove('hidden');
       section.classList.add('current');
     });
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  } else {
+    document.querySelectorAll('.page-content').forEach(section => {
+      if (section.id === sectionId) {
+        section.classList.remove('hidden');
+        section.classList.add('current');
+      } else {
+        section.classList.add('hidden');
+        section.classList.remove('current');
+      }
+    });
   }
-
-} else {
-  // Show only selected section
-  document.querySelectorAll('.page-content').forEach(section => {
-    if (section.id === sectionId) {
-      section.classList.remove('hidden');
-      section.classList.add('current');
-    } else {
-      section.classList.add('hidden');
-      section.classList.remove('current');
-    }
-  });
 }
-
 
 // Animate skill bars on page load
 window.addEventListener("load", () => {
-  document.querySelectorAll(".skill-progress").forEach((el) => {
+  document.querySelectorAll(".skill-progress").forEach(el => {
     el.classList.add("animate");
   });
 });
@@ -59,7 +64,6 @@ function validateForm(event) {
     return false;
   }
 
-  // Show confirmation message and reset form
   document.getElementById("form-message").style.display = "block";
   event.target.reset();
   return false;
