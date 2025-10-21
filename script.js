@@ -1,13 +1,22 @@
 "use strict";
 
 document.addEventListener("DOMContentLoaded", () => {
-  const homeLink = document.querySelector('.nav-link.home');
+  // Attach click listeners to nav links
+  document.querySelectorAll('.nav-link').forEach(link => {
+    link.addEventListener('click', (event) => {
+      event.preventDefault();
+      const sectionId = link.getAttribute('href').substring(1);
+      showSection(sectionId, link, event);
+    });
+  });
+
+  // Show Home tab and all containers by default on page load
+  const homeLink = document.querySelector('.nav-link[href="#Home"]');
   if (homeLink) {
     showSection('Home', homeLink, null);
   }
 });
 
-// Navigation tab logic
 function showSection(sectionId, clickedElement, event) {
   if (event) event.preventDefault();
 
@@ -27,6 +36,16 @@ function showSection(sectionId, clickedElement, event) {
       if (section.id === sectionId) {
         section.classList.remove('hidden');
         section.classList.add('current');
+        // Delay scroll to ensure visibility
+        setTimeout(() => {
+          const navbar = document.querySelector('.glass-navbar');
+          const navbarHeight = navbar ? navbar.offsetHeight : 80;
+          const sectionTop = section.getBoundingClientRect().top + window.scrollY;
+          window.scrollTo({
+            top: sectionTop - navbarHeight - 60, // 20px extra space; adjust as desired
+            behavior: 'smooth'
+          });
+        }, 0);
       } else {
         section.classList.add('hidden');
         section.classList.remove('current');
@@ -34,6 +53,7 @@ function showSection(sectionId, clickedElement, event) {
     });
   }
 }
+
 
 // Animate skill bars on page load
 window.addEventListener("load", () => {
