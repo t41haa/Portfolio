@@ -55,7 +55,7 @@
             </section>
         </div>
 
-        <div id="resume" class="page-content current">
+        <div id="resume" class="page-content hidden">
             <section class="glass-section resume-timeline">
                 <div class="timeline-heading">
 
@@ -113,7 +113,7 @@
         </div>
 
         <!-- Portfolio -->
-        <div id="Portfolio" class="page-content current">
+        <div id="Portfolio" class="page-content hidden">
             <section class="glass-section">
                 <h2>Portfolio</h2>
                 <div class="portfolio-cards">
@@ -132,7 +132,7 @@
         </div>
 
         <!-- Contact -->
-        <div id="contact" class="page-content current">
+        <div id="contact" class="page-content hidden">
             <div class="contact-container">
                 <h2><span style="color:#7ea6fd;">Let's work together</span></h2>
                 <p>Have a project in mind? I'd love to hear about it. Send me a message and I'll get back to you soon.
@@ -178,27 +178,37 @@
     </footer>
 
     <script>
-        // Navigation logic remains unchanged
-        function showSection(sectionId, clickedElement, event) {
-            if (event) event.preventDefault();
+  function showSection(sectionId, clickedElement, event) {
+    if (event) event.preventDefault();
 
-            document.querySelectorAll('.nav-link').forEach(link => {
-                link.classList.remove('active');
-            });
-            clickedElement.classList.add('active');
+    document.querySelectorAll('.nav-link').forEach(link => {
+      link.classList.remove('active');
+    });
+    clickedElement.classList.add('active');
 
-            // Show only selected section
-            document.querySelectorAll('.page-content').forEach(section => {
-                if (section.id === sectionId) {
-                    section.classList.remove('hidden');
-                    section.classList.add('current');
-                } else {
-                    section.classList.add('hidden');
-                    section.classList.remove('current');
-                }
-            });
+    if (sectionId === 'Home') {
+      // Show all containers when Home tab is clicked
+      document.querySelectorAll('.page-content').forEach(section => {
+        section.classList.remove('hidden');
+        section.classList.add('current');
+      });
+      // Scroll to top optionally
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else {
+      // Show only the selected container for other tabs
+      document.querySelectorAll('.page-content').forEach(section => {
+        if (section.id === sectionId) {
+          section.classList.remove('hidden');
+          section.classList.add('current');
+        } else {
+          section.classList.add('hidden');
+          section.classList.remove('current');
         }
-    </script>
+      });
+    }
+  }
+</script>
+
 </body>
 
 </html>
